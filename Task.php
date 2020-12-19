@@ -110,6 +110,9 @@ class Task
         foreach ($lineArray as $value) {
             $str .= $value;
         }
+        if (!file_exists(self::OUTPUT_TEXT_PATH)) {
+            mkdir(self::OUTPUT_TEXT_PATH, 0777, true);
+        }
         file_put_contents(self::OUTPUT_TEXT_PATH . $fileName, $str, FILE_APPEND);
     }
 }
