@@ -113,6 +113,8 @@ class Task
         if (!file_exists(self::OUTPUT_TEXT_PATH)) {
             mkdir(self::OUTPUT_TEXT_PATH, 0777, true);
         }
-        file_put_contents(self::OUTPUT_TEXT_PATH . $fileName, $str, FILE_APPEND);
+        if (!file_exists(self::OUTPUT_TEXT_PATH . $fileName)) {
+            file_put_contents(self::OUTPUT_TEXT_PATH . $fileName, $str, FILE_APPEND);
+        }
     }
 }
