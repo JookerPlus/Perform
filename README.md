@@ -1,6 +1,6 @@
 # Perform
 
-Запуск php php user_text_util.php [delimeter] [task]
+Запуск php php user_text_util.php [delimiter] [task]
 Доступные аргументы:
-delimeter = ['comma', 'semicolon'];
+delimiter = ['comma', 'semicolon'];
 task = ['countAverageLineCount', 'replaceDates'];
