@@ -30,7 +30,11 @@ class Task
 
     protected function getCSV(string $fileName)
     {
-        $scvFile = fopen($fileName, 'r');
+        if (file_exists($fileName)) {
+            $scvFile = fopen($fileName, 'r');
+        } else {
+            throw new Exception('Файла не существует');
+        }
         $arrayLine = [];
         while (($data = fgetcsv($scvFile, 0, self::DELIMITERS[$this->delimiter])) !== false) {
             if ($data !== NULL) {
